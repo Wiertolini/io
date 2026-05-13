@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>584</x>
+      <y>136</y>
+      <w>120</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>/Użytkownik/
+--
+-id: UUID
+-email: String
+-nazwaUżytkownika: String
+-hashHasła: String
+-rola: Enum
+-czyShadowban: Boolean
+--
++zarejestruj(...)
++zaloguj(...)
++aktualizujProfil(...)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>232</y>
+      <w>104</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Skater
+--
+-bio: String
+-urlAvatara: String
+-miasto: String
+-liczbaObserwujących: int
+--
++prześlijKlip(...)
++obserwujUżytkownika(...)
++utwórzWyzwanie(...)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>232</y>
+      <w>112</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Sędzia
+--
+-dziennyLimitOdznak: int
+--
++oceńKlip(...)
++ustawTrudność(...)
++przyznajOdznakęJakości(...)
++rozstrzygnijWyzwanie(...)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>232</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Moderator
+--
+-regionModeracji: String
+--
++usuńKomentarz(...)
++nałóżShadowban(...)
++zatwierdźSpot(...)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>776</x>
+      <y>232</y>
+      <w>112</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Administrator
+--
+-poziomUprawnień: int
+--
++zarządzajRolą(...)
++konfigurujWagiFeedu(...)
++dodajKategorięTriku(...)
++odzyskajHasło(...)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>352</y>
+      <w>104</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Klip
+--
+-id: UUID
+-urlWideo: String
+-tytuł: String
+-opis: String
+-dataPrzesłania: DateTime
+-czasTrwania: TimeSpan
+-poziomTrudności: Enum
+-odznakaJakości: Boolean
+--
++odtwórz()
++przytnij(...)
++przypiszTrik(...)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>444</y>
+      <w>88</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Komentarz
+--
+-id: UUID
+-treść: String
+-dataUtworzenia: DateTime
+-idAutora: UUID
+-idKlipu: UUID
+--
++opublikuj()
++usuń()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>332</x>
+      <y>444</y>
+      <w>88</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Reakcja
+--
+-id: UUID
+-typ: Enum
+-idUżytkownika: UUID
+-idKlipu: UUID
+--
++zapiszReakcję()
++cofnijReakcję()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>536</x>
+      <y>352</y>
+      <w>104</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Wyzwanie S.K.A.T.E.
+--
+-id: UUID
+-idWyzywającego: UUID
+-idPrzeciwnika: UUID
+-status: Enum
+-idZwycięzcy: UUID
+-dataRozpoczęcia: DateTime
+--
++akceptujWyzwanie()
++dodajKlipOdpowiedzi(...)
++zakończGrę()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>656</x>
+      <y>348</y>
+      <w>112</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Spot
+--
+-id: UUID
+-nazwa: String
+-opis: String
+-szerokośćGeograficzna: Double
+-długośćGeograficzna: Double
+-status: Enum
+--
++zgłośDoWeryfikacji()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>268</x>
+      <y>368</y>
+      <w>88</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Trik
+--
+-id: UUID
+-nazwa: String
+-kategoria: Enum
+-czyAktywny: Boolean
+--
++ukryjTrik()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>204</y>
+      <w>156</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;20.0;370.0;20.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>572</x>
+      <y>204</y>
+      <w>48</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;30.0;100.0;30.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>204</y>
+      <w>72</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;70.0;160.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>668</x>
+      <y>204</y>
+      <w>172</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>410.0;70.0;410.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>444</x>
+      <y>288</y>
+      <w>32</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+przesyła
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>436</y>
+      <w>24</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;40.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>436</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;10.0;40.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>484</x>
+      <y>288</y>
+      <w>88</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+uczestniczy
+m1=2..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;190.0;120.0;190.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>360</y>
+      <w>44</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+zawiera
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>380</y>
+      <w>56</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-
+prezentuje
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>288</y>
+      <w>224</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=-
+dodaje
+m1=*
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;540.0;80.0;540.0;150.0</additional_attributes>
+  </element>
+</diagram>
