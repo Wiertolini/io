@@ -103,39 +103,13 @@ Projekt obejmuje:
 * diagramy stanów,
 * diagramy czynności,
 * diagramy przebiegu (sekwencji),
-* diagram wdrożenia.
+
 
 Pełna dokumentacja znajduje się w folderze projektu.
 
 ---
 
-# 🧰 Technologie
 
-## Frontend
-
-* React
-* TypeScript
-* Tailwind CSS
-
-## Backend
-
-* Spring Boot
-* Java
-
-## Baza danych
-
-* PostgreSQL
-
-## Przechowywanie plików
-
-* AWS S3
-
-## DevOps
-
-* Docker
-* GitHub Actions
-
----
 
 # 👨‍💻 Autorzy projektu
 
